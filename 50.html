@@ -1,103 +1,142 @@
 <!DOCTYPE HTML>
-<!--
-    Hyperspace by HTML5 UP
-    html5up.net | @ajlkn
-    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
     <head>
-        <title>Real-Time Operator Takeover - Experiments initial 20</title>
+        <title>Real-Time Operator Takeover - Experiments</title>
         <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-        <link rel="stylesheet" href="assets/css/main.css" />
-        <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
         <style>
-            .row {
+            @import url('assets/css/main.css');
+        </style>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link href="assets/css/llm.css" rel="stylesheet">
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+        <style>
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+                background-color: #F4F4F4 !important;
+                color: white;
+            }
+            
+            .container {
+                max-width: 1200px;
+                margin: auto;
+                padding: 20px;
+                text-align: center;
+            }
+            h2 {
+                font-size: 26px;
+                margin-bottom: 20px;
+            }
+            .grid {
                 display: grid;
-                grid-template-columns: repeat(5, 1fr); /* 5 elements per row */
-                gap: 20px; /* Optional: spacing between items */
-                justify-content: center; /* Centers grid items horizontally */
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                gap: 20px;
+                justify-content: center;
             }
-            div.divtitle {
-                padding-top: 25px;
-                padding-bottom: 50px;
-
+            .trial-card {
+                /* background: #2D3E50; */
+                /* background: #2D3E50; */
+                padding: 15px;
+                border-radius: 10px;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+                text-align: center;
             }
-
-            div.divtrial {
-                padding-top: 5px;
-                padding-bottom: 5px;
+            .trial-card h3 {
+                margin-bottom: 10px;
+            }
+            .divtitle {
+                margin-bottom: 70px; /* Adjust this value as needed */
+                text-align: left; /* Ensures text alignment remains left */
             }
             .divtrial-group {
-                border: 2px solid #ccc; /* Light grey border */
-                border-radius: 10px; /* Rounded corners */
-                padding: 10px; /* Inner spacing */
-                margin-bottom: 5px; /* Space between groups */
-                margin-left: 20px; /* Space between groups */
-                margin-right: 20px; /* Space between groups */
-                box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
-                background: #004576; /* Light background */
+                width: 25%; /* 4 items per row */
+                margin-bottom: 40px; /* Adjust this value as needed */
+                text-align: left; /* Ensures text alignment remains left */
             }
-            .divtrial-group h3 {
-                text-align: center;
-                margin-top: 5px;
-            }
-
             .video-container {
                 position: relative;
-                width: 320px; /* Set a fixed width */
-                height: 200px; /* Set a fixed height */
-                margin-top: 30px;
-                margin-bottom: 50px; /* Space between groups */
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                overflow: hidden; /* Ensures no overflow */
+                width: 100%;
+                height: 200px;
+                border-radius: 8px;
+                overflow: hidden;
             }
-        
             .video-container video {
                 width: 100%;
                 height: 100%;
-                object-fit: cover; /* Ensures consistent scaling */
+                object-fit: cover;
             }
-
             .video-overlay {
                 position: absolute;
-                top: 0px;
-                left: 0px;
+                top: 0;
+                left: 0;
                 width: 100%;
                 height: 100%;
-                background: rgba(0, 0, 0, 0.5); /* 50% Black Opacity */
-                border: none;
-                border-radius: 0; /* Ensures no rounded edges */
-                cursor: pointer;
-                color: white;
-                font-size: 18px;
+                background: rgba(0, 0, 0, 0.6);
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                text-align: center;
-                z-index: 2;
-                /* font-size: 80px; */
+                color: white;
+                font-size: 20px;
+                font-weight: bold;
+                cursor: pointer;
+                border-radius: 8px;
             }
-        
             .video-overlay:hover {
-                background: rgba(0, 0, 0, 0.7);
-            }            
+                background: rgba(0, 0, 0, 0.8);
+                
+            }
         </style>
-        <!-- MathJax for LaTeX rendering -->
-        <script type="text/javascript" async
-        src="https://polyfill.io/v3/polyfill.min.js?features=es6">
+    <!-- </head>
+    <body>
+        <div class="container">
+            <h2>Recordings of \(\pi_{all}^{50}\) Policy Trials (50% Outliers Removed)</h2>
+            <div class="grid">
+                <div class="trial-card">
+                    <h3>Trial 1</h3>
+                    <div class="video-container">
+                        <video>
+                            <source src="videos/50/policy_view/episode_1.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-overlay">PLAY</div>
+                    </div>
+                </div>
+                <div class="trial-card">
+                    <h3>Trial 2</h3>
+                    <div class="video-container">
+                        <video>
+                            <source src="videos/50/observer_view/episode_2.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-overlay">PLAY</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            document.querySelectorAll(".video-overlay").forEach(overlay => {
+                overlay.addEventListener("click", function () {
+                    const video = this.previousElementSibling;
+                    video.setAttribute("controls", "true");
+                    this.style.display = "none";
+                    video.play();
+                });
+            });
         </script>
-        <script type="text/javascript" async
-        id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-        </script>
-    </head>
+    </body>
+</html> -->
+
+
+    <script type="text/javascript" async
+    src="https://polyfill.io/v3/polyfill.min.js?features=es6">
+    </script>
+    <script type="text/javascript" async
+    id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
     <body class="is-preload">
 
         <!-- Header -->
         <header id="header">
-            <a href="index.html" class="title">Recordings of \(\pi_{all}^{50}\) policy trials</a>
+            <a href="index.html" class="title">\(\pi_{all}^{50}\) Recordings</a>
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
@@ -113,7 +152,8 @@
                 <div class="inner">
                     <div class="divtitle">
                         <article class="col-4 col-12-xsmall work-item">
-                            <h2>Recordings of \(\pi_{all}^{50}\) policy trials (50% of outliers removed, all available inputs)</h2>
+                            <h2>Recordings of \(\pi_{all}^{50}\) policy trials</h2>
+                            <h3><em>50% of demos removed, all available inputs</em></h3>
                         </article>
                     </div>
 

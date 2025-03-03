@@ -3266,9 +3266,8 @@ input, select, textarea {
 		}
 
 		.wrapper.style3 {
-			background-color: #4966a8;
+			background-color: #1f6ca8;
 		}
-
 
 		.wrapper.style4 {
 			background-color: #56627e;
@@ -3396,7 +3395,7 @@ input, select, textarea {
 		display: -webkit-flex;
 		display: -ms-flex;
 		display: flex;
-		background-color: rgba(25, 40, 67, 255); /*#5e42a6;*/
+		/* background-color: #007BFF; */
 		cursor: default;
 		padding: 1.75em 2em;
 	}
