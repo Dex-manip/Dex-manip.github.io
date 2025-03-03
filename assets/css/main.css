@@ -3246,7 +3246,7 @@ input, select, textarea {
 			}
 
 		.wrapper.alt {
-			background-color: #261c3e;
+			background-color: #2d4b79;
 		}
 
 		.wrapper.style1 {
@@ -3538,7 +3538,7 @@ input, select, textarea {
 
 	#footer > .inner .menu {
 		font-size: 0.8em;
-		color: rgba(255, 255, 255, 0.15);
+		color: rgb(255, 255, 255);
 	}
 
 	#header + #wrapper + #footer > .inner {
@@ -3903,6 +3903,7 @@ input, select, textarea {
 		background-position: top right;
 		background-repeat: no-repeat;
 		background-size: 100% 100%;
+		color: white;
 	}
 
 		#intro p {
@@ -3945,6 +3946,6 @@ input, select, textarea {
 .p-code{
 	background-color: #b8b8ce;
 	padding: 10px;
-	color: #162844;
+	color: #441616;
 	border-radius: 10px;
 }

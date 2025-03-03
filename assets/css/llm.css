@@ -39,7 +39,7 @@ p {
     --secondary-color: #28A745; /* Green for success */
     --error-color: #DC3545;     /* Red for errors */
     --background-color: #F4F4F4; /* Light gray */
-    --text-color: #333;         /* Default text color */
+    --text-color: #ffffff;         /* Default text color */
     --card-background: #FFFFFF; /* White for card sections */
     --border-color: rgba(0, 0, 0, 0.1); /* Soft shadow/border */
 }

@@ -14,6 +14,14 @@
 		<link href="assets/css/llm.css" rel="stylesheet">
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
+	<style>
+		.all-experiments-container {
+		    margin-top: 3cm;
+		}
+		#intro p {
+				color: #d9e0ff;
+			}
+	</style>
 	<body class="is-preload">
 
 		<!-- Sidebar -->
@@ -21,7 +29,7 @@
 				<div class="inner">
 					<nav>
 						<ul>
-							<li><a href="#intro">Operator Takeover</a></li>
+							<li><a href="#intro">Main</a></li>
 							<li><a href="#train">Expert Demonstrations</a></li>
 							<li><a href="#eval">Experiments</a></li>
 							<!--li><a href="#cite">How to Cite</a></li-->
@@ -37,13 +45,33 @@
 				<!-- Intro -->
 					<section id="intro" class="wrapper style1 fullscreen fade-up">
 						<div class="inner">
-							<h2>							<h2>Learning Dexterous In-Hand Manipulation with Multi Fingered Hands via Visuomotor Diffusion</h2>
- </h2>
-							<h3>Piotr Koczy, Michael C. Welle, Danica Kragic</h3>
+							<h1>Learning Dexterous In-Hand Manipulation with Multi Fingered Hands via Visuomotor Diffusion</h1>
+							<h2>Piotr Koczy, Michael C. Welle, Danica Kragic</h2>
 							<p>
-								TODO
-							<p>
+								We present a framework for learning dexterous
+								in-hand manipulation with multifingered hands using visuomotor diffusion policies. 
+								Our system enables complex in-hand
+								manipulation tasks, such as unscrewing a bottle lid with one
+								hand, by leveraging a fast and responsive teleoperation setup for
+								the four-fingered Allegro Hand. We collect high-quality expert
+								demonstrations using an augmented reality (AR) interface
+								that tracks hand movements and applies inverse kinematics
+								and motion retargeting for precise control. The AR headset
+								provides real-time visualization, while gesture controls streamline teleoperation. 
+								To enhance policy learning, we introduce
+								a novel demonstration outlier removal approach based on
+								HDBSCAN clustering and the Global-Local Outlier Score from
+								Hierarchies (GLOSH) algorithm, effectively filtering out low-quality 
+								demonstrations that could degrade performance. We
+								evaluate our approach extensively in real-world settings and
+								provide all experimental videos on the project website.							<p>
 							</p>
+							<div class="row">
+								<div class="video-container">
+									<button onclick="window.open('files/preprint.pdf', '_blank');" class="download-button">Download Preprint</button>
+							    </div>
+							</div>
+
 							<div class="row">
 								<div class="video-container">
 							        <p><b></b> </p>
@@ -55,8 +83,10 @@
 							    </div>
 
 							</div>
-							<p> </p>
-							<a href="files/preprint.pdf" target="_blank" download="files/preprint.pdf">Download Preprint</a>
+
+
+
+							<!-- <a href="files/preprint.pdf" target="_blank" download="files/preprint.pdf"><b>Download Preprint</b></a> -->
 						</div>
 					</section>
 
@@ -67,7 +97,7 @@
 							<h2>Expert Demonstrations</h2>
 								<div class="video-container">
 							        <p><b>Lid unscrewing session using teleoperation system</b> </p>
-							        <video width="512" height="512" controls preload="auto">
+							        <video width="960" height="960" controls preload="auto">
 							            <source src="videos/teleop_website.mp4" type="video/mp4">
 							        </video>
 							    </div>
@@ -79,48 +109,63 @@
 					<!-- Eval -->
 					<section id="eval" class="wrapper style3 fade-up">
 						<div class="inner">
-							<h2>Experiments </h2>
+							<h2>Experiments</h2>
 
-							<p> </p>
-							<p> We evaluated policies trained on only initial demonstrations and onces with takeover demonstrations </p>
 
 
 							<div class="row">
 								<div class="video-container">
-							        <p><b>Rice Scooping with Takeover #2</b> </p>
-							        <video width="640" height="360" controls preload="auto">
-							            <source src="videos/rice_202020_t10.m4v" type="video/mp4">
+							        <p><b>Best policy evaluation (\(\pi_{nt}\))</b> </p>
+							        <video width="960" height="540" controls preload="auto">
+							            <source src="videos/policy_demo.mp4" type="video/mp4">
 							            Your browser does not support the video tag.
 							        </video>
-							    </div>
-							    <div class="video-container">
-							        <p><b>Rice Scooping with Takeover #1</b> </p>
-							        <video width="640" height="360" controls preload="auto">
-							            <source src="videos/rice_2020_t10.m4v" type="video/mp4">
-							            Your browser does not support the video tag.
-							        </video>
-							    </div>
-							    <div class="video-container">
-							        <p><b>Rice Scooping initial 20</b> </p>
-							        <video width="640" height="360" controls preload="auto">
-							            <source src="videos/rice_20_t10.m4v" type="video/mp4">
-							            Your browser does not support the video tag.
-							        </video>
-							    </div>
-							  
+							    </div>							  
 							</div>
 
-							<p> All experiments: </p>
 
+							<div class="row all-experiments-container">
+								<p><b>All experiments:</b></p>
+							</div>
+							
 							<div class="row">
-							<p> <a class="button mybutton"  href="50.html" target="_blank" > 50</a> </p>
-							<p> <a class="button mybutton"  href="init40.html" target="_blank" > Init 40</a> </p>
-							<p> <a class="button mybutton"  href="init60.html" target="_blank" > Init 60</a> </p>
-							<p> <a class="button mybutton"  href="takeover1.html" target="_blank" > Takeover 1</a> </p>
-							<p> <a class="button mybutton"  href="takeover2.html" target="_blank" > Takeover 2</a> </p>
-
-							</div>
-
+								<p>
+								  <a class="button mybutton" href="50.html">
+									<span style="font-size: 1.5em;">π<sub>all</sub><sup>50</sup></span>
+								  </a>
+								</p>
+								<p>
+								  <a class="button mybutton" href="70.html">
+									<span style="font-size: 1.5em;">π<sub>all</sub><sup>70</sup></span>
+								  </a>
+								</p>
+								<p>
+								  <a class="button mybutton" href="90.html">
+									<span style="font-size: 1.5em;">π<sub>all</sub><sup>90</sup></span>
+								  </a>
+								</p>
+								<p>
+								  <a class="button mybutton" href="100.html">
+									<span style="font-size: 1.5em;">π<sub>all</sub><sup>100</sup></span>
+								  </a>
+								</p>
+								<p>
+								  <a class="button mybutton" href="100ne.html">
+									<span style="font-size: 1.5em;">π<sub>ne</sub></span>
+								  </a>
+								</p>
+								<p>
+								  <a class="button mybutton" href="100nt.html">
+									<span style="font-size: 1.5em;">π<sub>nt</sub></span>
+								  </a>
+								</p>
+								<p>
+								  <a class="button mybutton" href="100nw.html">
+									<span style="font-size: 1.5em;">π<sub>nw</sub></span>
+								  </a>
+								</p>
+							  </div>
+							  
 
 							
 
@@ -184,5 +229,11 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 
+			<script type="text/javascript" async
+			src="https://polyfill.io/v3/polyfill.min.js?features=es6">
+			</script>
+			<script type="text/javascript" async
+			id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+			</script>
 	</body>
 </html>

@@ -1,0 +1,674 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Real-Time Operator Takeover - Experiments</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+        <style>
+            @import url('assets/css/main.css');
+        </style>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link href="assets/css/llm.css" rel="stylesheet">
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+        <style>
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+                background-color: #F4F4F4 !important;
+                color: white;
+            }
+            
+            .container {
+                max-width: 1200px;
+                margin: auto;
+                padding: 20px;
+                text-align: center;
+            }
+            h2 {
+                font-size: 26px;
+                margin-bottom: 20px;
+            }
+            .grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                gap: 20px;
+                justify-content: center;
+            }
+            .trial-card {
+                /* background: #2D3E50; */
+                /* background: #2D3E50; */
+                padding: 15px;
+                border-radius: 10px;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+                text-align: center;
+            }
+            .trial-card h3 {
+                margin-bottom: 10px;
+            }
+            .divtitle {
+                margin-bottom: 70px; /* Adjust this value as needed */
+                text-align: left; /* Ensures text alignment remains left */
+            }
+            .divtrial-group {
+                width: 25%; /* 4 items per row */
+                margin-bottom: 40px; /* Adjust this value as needed */
+                text-align: left; /* Ensures text alignment remains left */
+            }
+            .video-container {
+                position: relative;
+                width: 100%;
+                height: 200px;
+                border-radius: 8px;
+                overflow: hidden;
+            }
+            .video-container video {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            .video-overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.6);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-size: 20px;
+                font-weight: bold;
+                cursor: pointer;
+                border-radius: 8px;
+            }
+            .video-overlay:hover {
+                background: rgba(0, 0, 0, 0.8);
+                
+            }
+        </style>
+
+
+    <script type="text/javascript" async
+    src="https://polyfill.io/v3/polyfill.min.js?features=es6">
+    </script>
+    <script type="text/javascript" async
+    id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+    <body class="is-preload">
+
+        <!-- Header -->
+        <header id="header">
+            <a href="index.html" class="title">\(\pi_{all}^{100}\) Recordings</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Wrapper -->
+        <div id="wrapper">
+
+            <!-- Main -->
+            <section id="main" class="wrapper style3 spotlight">
+                <div class="inner">
+                    <div class="divtitle">
+                        <article class="col-4 col-12-xsmall work-item">
+                            <h2>Recordings of \(\pi_{all}^{100}\) policy trials</h2>
+                            <h3><em>All demos, all available inputs</em></h3>
+                        </article>
+                    </div>
+
+                    <div class="row">
+                        <!-- TRIAL 01 GROUP -->
+                        <div class="divtrial-group">
+                            <h3>Trial 1</h3>
+                            <div class="divtrial">
+                                <article class="col-4 col-12-xsmall work-item">
+                                    <div class="video-container">
+                                        <video width="320" height="240">
+                                            <source src="videos/100/policy_view/episode_20250226_093906.mp4" type="video/mp4">
+                                        </video>
+                                        <button class="video-overlay">Play</button>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="divtrial">
+                                <article class="col-4 col-12-xsmall work-item">
+                                    <div class="video-container">
+                                        <video width="320" height="240">
+                                            <source src="videos/100/observer_view/episode_20250226_093906.mp4" type="video/mp4">
+                                        </video>
+                                        <button class="video-overlay">Play</button>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+
+                        <!-- TRIAL 02 GROUP -->
+                        <div class="divtrial-group">
+                            <h3>Trial 2</h3>
+                            <div class="divtrial">
+                                <article class="col-4 col-12-xsmall work-item">
+                                    <div class="video-container">
+                                        <video width="320" height="240">
+                                            <source src="videos/100/policy_view/episode_20250226_094033.mp4" type="video/mp4">                                    
+                                        </video>
+                                        <button class="video-overlay">Play</button>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="divtrial">
+                                <article class="col-4 col-12-xsmall work-item">
+                                    <div class="video-container">
+                                        <video width="320" height="240">
+                                            <source src="videos/100/observer_view/episode_20250226_094033.mp4" type="video/mp4">                                    
+                                        </video>
+                                        <button class="video-overlay">Play</button>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+
+                        <!-- TRIAL 03 GROUP -->
+                        <div class="divtrial-group">
+                            <h3>Trial 3</h3>
+                            <div class="divtrial">
+                                <article class="col-4 col-12-xsmall work-item">
+                                    <div class="video-container">
+                                        <video width="320" height="240">
+                                        <source src="videos/100/policy_view/episode_20250226_094114.mp4" type="video/mp4">                                    
+                                        </video>
+                                        <button class="video-overlay">Play</button>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="divtrial">
+                                <article class="col-4 col-12-xsmall work-item">
+                                    <div class="video-container">
+                                        <video width="320" height="240">
+                                        <source src="videos/100/observer_view/episode_20250226_094114.mp4" type="video/mp4">                                    
+                                        </video>
+                                        <button class="video-overlay">Play</button>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+
+
+                        <!-- TRIAL 04 GROUP -->
+                        <div class="divtrial-group">
+                            <h3>Trial 4</h3>
+                            <div class="divtrial">
+                                <article class="col-4 col-12-xsmall work-item">
+                                    <div class="video-container">
+                                        <video width="320" height="240">
+                                        <source src="videos/100/policy_view/episode_20250226_094220.mp4" type="video/mp4">                                    
+                                        </video>
+                                        <button class="video-overlay">Play</button>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="divtrial">
+                                <article class="col-4 col-12-xsmall work-item">
+                                    <div class="video-container">
+                                        <video width="320" height="240">
+                                        <source src="videos/100/observer_view/episode_20250226_094220.mp4" type="video/mp4">                                    
+                                        </video>
+                                        <button class="video-overlay">Play</button>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+
+
+
+                        <!-- TRIAL 05 GROUP -->
+                        <div class="divtrial-group">
+                            <h3>Trial 5</h3>
+                            <div class="divtrial">
+                                <article class="col-4 col-12-xsmall work-item">
+                                    <div class="video-container">
+                                        <video width="320" height="240">
+                                        <source src="videos/100/policy_view/episode_20250226_094433.mp4" type="video/mp4">                                    
+                                        </video>
+                                        <button class="video-overlay">Play</button>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="divtrial">
+                                <article class="col-4 col-12-xsmall work-item">
+                                    <div class="video-container">
+                                        <video width="320" height="240">
+                                        <source src="videos/100/observer_view/episode_20250226_094433.mp4" type="video/mp4">                                    
+                                        </video>
+                                        <button class="video-overlay">Play</button>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+
+                    <!-- TRIAL 06 GROUP -->
+                        <div class="divtrial-group">
+                            <h3>Trial 6</h3>
+                            <div class="divtrial">
+                                <article class="col-4 col-12-xsmall work-item">
+                                    <div class="video-container">
+                                        <video width="320" height="240">
+                                        <source src="videos/100/policy_view/episode_20250226_094647.mp4" type="video/mp4">                                    
+                                        </video>
+                                        <button class="video-overlay">Play</button>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="divtrial">
+                                <article class="col-4 col-12-xsmall work-item">
+                                    <div class="video-container">
+                                        <video width="320" height="240">
+                                        <source src="videos/100/observer_view/episode_20250226_094647.mp4" type="video/mp4">                                    
+                                        </video>
+                                        <button class="video-overlay">Play</button>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+
+                        <!-- TRIAL 07 GROUP -->
+                        <div class="divtrial-group">
+                            <h3>Trial 7</h3>
+                            <div class="divtrial">
+                                <article class="col-4 col-12-xsmall work-item">
+                                    <div class="video-container">
+                                        <video width="320" height="240">
+                                        <source src="videos/100/policy_view/episode_20250226_094901.mp4" type="video/mp4">                                    
+                                        </video>
+                                        <button class="video-overlay">Play</button>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="divtrial">
+                                <article class="col-4 col-12-xsmall work-item">
+                                    <div class="video-container">
+                                        <video width="320" height="240">
+                                        <source src="videos/100/observer_view/episode_20250226_094901.mp4" type="video/mp4">                                    
+                                        </video>
+                                        <button class="video-overlay">Play</button>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+
+                        <!-- TRIAL 08 GROUP -->
+                        <div class="divtrial-group">
+                            <h3>Trial 8</h3>
+                            <div class="divtrial">
+                                <article class="col-4 col-12-xsmall work-item">
+                                    <div class="video-container">
+                                        <video width="320" height="240">
+                                        <source src="videos/100/policy_view/episode_20250226_095119.mp4" type="video/mp4">                                    
+                                        </video>
+                                        <button class="video-overlay">Play</button>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="divtrial">
+                                <article class="col-4 col-12-xsmall work-item">
+                                    <div class="video-container">
+                                        <video width="320" height="240">
+                                        <source src="videos/100/observer_view/episode_20250226_095119.mp4" type="video/mp4">                                    
+                                        </video>
+                                        <button class="video-overlay">Play</button>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+
+                        <!-- TRIAL 09 GROUP -->
+                        <div class="divtrial-group">
+                            <h3>Trial 9</h3>
+                            <div class="divtrial">
+                                <article class="col-4 col-12-xsmall work-item">
+                                    <div class="video-container">
+                                        <video width="320" height="240">
+                                        <source src="videos/100/policy_view/episode_20250226_095446.mp4" type="video/mp4">                                    
+                                        </video>
+                                        <button class="video-overlay">Play</button>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="divtrial">
+                                <article class="col-4 col-12-xsmall work-item">
+                                    <div class="video-container">
+                                        <video width="320" height="240">
+                                        <source src="videos/100/observer_view/episode_20250226_095446.mp4" type="video/mp4">                                    
+                                        </video>
+                                        <button class="video-overlay">Play</button>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+
+                        <!-- TRIAL 10 GROUP -->
+                        <div class="divtrial-group">
+                            <h3>Trial 10</h3>
+                            <div class="divtrial">
+                                <article class="col-4 col-12-xsmall work-item">
+                                    <div class="video-container">
+                                        <video width="320" height="240">
+                                        <source src="videos/100/policy_view/episode_20250226_095700.mp4" type="video/mp4">                                    
+                                        </video>
+                                        <button class="video-overlay">Play</button>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="divtrial">
+                                <article class="col-4 col-12-xsmall work-item">
+                                    <div class="video-container">
+                                        <video width="320" height="240">
+                                        <source src="videos/100/observer_view/episode_20250226_095700.mp4" type="video/mp4">                                    
+                                        </video>
+                                        <button class="video-overlay">Play</button>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+
+                        <!-- TRIAL 11 GROUP -->
+                        <div class="divtrial-group">
+                            <h3>Trial 11</h3>
+                            <div class="divtrial">
+                                <article class="col-4 col-12-xsmall work-item">
+                                    <div class="video-container">
+                                        <video width="320" height="240">
+                                        <source src="videos/100/policy_view/episode_20250226_095905.mp4" type="video/mp4">                                    
+                                        </video>
+                                        <button class="video-overlay">Play</button>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="divtrial">
+                                <article class="col-4 col-12-xsmall work-item">
+                                    <div class="video-container">
+                                        <video width="320" height="240">
+                                        <source src="videos/100/observer_view/episode_20250226_095905.mp4" type="video/mp4">                                    
+                                        </video>
+                                        <button class="video-overlay">Play</button>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+
+                        <!-- TRIAL 12 GROUP -->
+                        <div class="divtrial-group">
+                            <h3>Trial 12</h3>
+                            <div class="divtrial">
+                                <article class="col-4 col-12-xsmall work-item">
+                                    <div class="video-container">
+                                        <video width="320" height="240">
+                                        <source src="videos/100/policy_view/episode_20250226_095949.mp4" type="video/mp4">                                    
+                                        </video>
+                                        <button class="video-overlay">Play</button>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="divtrial">
+                                <article class="col-4 col-12-xsmall work-item">
+                                    <div class="video-container">
+                                        <video width="320" height="240">
+                                        <source src="videos/100/observer_view/episode_20250226_095949.mp4" type="video/mp4">                                    
+                                        </video>
+                                        <button class="video-overlay">Play</button>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+
+                        <!-- TRIAL 13 GROUP -->
+                        <div class="divtrial-group">
+                            <h3>Trial 13</h3>
+                            <div class="divtrial">
+                                <article class="col-4 col-12-xsmall work-item">
+                                    <div class="video-container">
+                                        <video width="320" height="240">
+                                        <source src="videos/100/policy_view/episode_20250226_100107.mp4" type="video/mp4">                                    
+                                        </video>
+                                        <button class="video-overlay">Play</button>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="divtrial">
+                                <article class="col-4 col-12-xsmall work-item">
+                                    <div class="video-container">
+                                        <video width="320" height="240">
+                                        <source src="videos/100/observer_view/episode_20250226_100107.mp4" type="video/mp4">                                    
+                                        </video>
+                                        <button class="video-overlay">Play</button>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+
+                        <!-- TRIAL 14 GROUP -->
+                        <div class="divtrial-group">
+                            <h3>Trial 14</h3>
+                            <div class="divtrial">
+                                <article class="col-4 col-12-xsmall work-item">
+                                    <div class="video-container">
+                                        <video width="320" height="240">
+                                        <source src="videos/100/policy_view/episode_20250226_100230.mp4" type="video/mp4">                                    
+                                        </video>
+                                        <button class="video-overlay">Play</button>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="divtrial">
+                                <article class="col-4 col-12-xsmall work-item">
+                                    <div class="video-container">
+                                        <video width="320" height="240">
+                                        <source src="videos/100/observer_view/episode_20250226_100230.mp4" type="video/mp4">                                    
+                                        </video>
+                                        <button class="video-overlay">Play</button>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+
+                        <!-- TRIAL 15 GROUP -->
+                        <div class="divtrial-group">
+                            <h3>Trial 15</h3>
+                            <div class="divtrial">
+                                <article class="col-4 col-12-xsmall work-item">
+                                    <div class="video-container">
+                                        <video width="320" height="240">
+                                        <source src="videos/100/policy_view/episode_20250226_100300.mp4" type="video/mp4">                                    
+                                        </video>
+                                        <button class="video-overlay">Play</button>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="divtrial">
+                                <article class="col-4 col-12-xsmall work-item">
+                                    <div class="video-container">
+                                        <video width="320" height="240">
+                                        <source src="videos/100/observer_view/episode_20250226_100300.mp4" type="video/mp4">                                    
+                                        </video>
+                                        <button class="video-overlay">Play</button>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+
+                        <!-- TRIAL 16 GROUP -->
+                        <div class="divtrial-group">
+                            <h3>Trial 16</h3>
+                            <div class="divtrial">
+                                <article class="col-4 col-12-xsmall work-item">
+                                    <div class="video-container">
+                                        <video width="320" height="240">
+                                        <source src="videos/100/policy_view/episode_20250226_100402.mp4" type="video/mp4">                                    
+                                        </video>
+                                        <button class="video-overlay">Play</button>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="divtrial">
+                                <article class="col-4 col-12-xsmall work-item">
+                                    <div class="video-container">
+                                        <video width="320" height="240">
+                                        <source src="videos/100/observer_view/episode_20250226_100402.mp4" type="video/mp4">                                    
+                                        </video>
+                                        <button class="video-overlay">Play</button>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+
+                        <!-- TRIAL 17 GROUP -->
+                        <div class="divtrial-group">
+                            <h3>Trial 17</h3>
+                            <div class="divtrial">
+                                <article class="col-4 col-12-xsmall work-item">
+                                    <div class="video-container">
+                                        <video width="320" height="240">
+                                        <source src="videos/100/policy_view/episode_20250226_100457.mp4" type="video/mp4">                                    
+                                        </video>
+                                        <button class="video-overlay">Play</button>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="divtrial">
+                                <article class="col-4 col-12-xsmall work-item">
+                                    <div class="video-container">
+                                        <video width="320" height="240">
+                                        <source src="videos/100/observer_view/episode_20250226_100457.mp4" type="video/mp4">                                    
+                                        </video>
+                                        <button class="video-overlay">Play</button>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+
+                        <!-- TRIAL 18 GROUP -->
+                        <div class="divtrial-group">
+                            <h3>Trial 18</h3>
+                            <div class="divtrial">
+                                <article class="col-4 col-12-xsmall work-item">
+                                    <div class="video-container">
+                                        <video width="320" height="240">
+                                        <source src="videos/100/policy_view/episode_20250226_100712.mp4" type="video/mp4">                                    
+                                        </video>
+                                        <button class="video-overlay">Play</button>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="divtrial">
+                                <article class="col-4 col-12-xsmall work-item">
+                                    <div class="video-container">
+                                        <video width="320" height="240">
+                                        <source src="videos/100/observer_view/episode_20250226_100712.mp4" type="video/mp4">                                    
+                                        </video>
+                                        <button class="video-overlay">Play</button>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+
+                        <!-- TRIAL 19 GROUP -->
+                        <div class="divtrial-group">
+                            <h3>Trial 19</h3>
+                            <div class="divtrial">
+                                <article class="col-4 col-12-xsmall work-item">
+                                    <div class="video-container">
+                                        <video width="320" height="240">
+                                        <source src="videos/100/policy_view/episode_20250226_100930.mp4" type="video/mp4">                                    
+                                        </video>
+                                        <button class="video-overlay">Play</button>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="divtrial">
+                                <article class="col-4 col-12-xsmall work-item">
+                                    <div class="video-container">
+                                        <video width="320" height="240">
+                                        <source src="videos/100/observer_view/episode_20250226_100930.mp4" type="video/mp4">                                    
+                                        </video>
+                                        <button class="video-overlay">Play</button>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+
+                        <!-- TRIAL 20 GROUP -->
+                        <div class="divtrial-group">
+                            <h3>Trial 20</h3>
+                            <div class="divtrial">
+                                <article class="col-4 col-12-xsmall work-item">
+                                    <div class="video-container">
+                                        <video width="320" height="240">
+                                        <source src="videos/100/policy_view/episode_20250226_101008.mp4" type="video/mp4">                                    
+                                        </video>
+                                        <button class="video-overlay">Play</button>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="divtrial">
+                                <article class="col-4 col-12-xsmall work-item">
+                                    <div class="video-container">
+                                        <video width="320" height="240">
+                                        <source src="videos/100/observer_view/episode_20250226_101008.mp4" type="video/mp4">                                    
+                                        </video>
+                                        <button class="video-overlay">Play</button>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- Footer -->
+        <footer id="footer" class="wrapper alt">
+            <div class="inner">
+                <ul class="menu">
+                    <li>&copy; All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+                </ul>
+            </div>
+        </footer>
+
+        <!-- Scripts -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/jquery.scrollex.min.js"></script>
+        <script src="assets/js/jquery.scrolly.min.js"></script>
+        <script src="assets/js/browser.min.js"></script>
+        <script src="assets/js/breakpoints.min.js"></script>
+        <script src="assets/js/util.js"></script>
+        <script src="assets/js/main.js"></script>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                // Select all video containers
+                const videoContainers = document.querySelectorAll(".video-container");
+            
+                videoContainers.forEach(container => {
+                    const video = container.querySelector("video");
+                    const overlay = container.querySelector(".video-overlay");
+                
+                    overlay.addEventListener("click", function () {
+                        // Enable controls for the clicked video
+                        video.setAttribute("controls", "true");
+                    
+                        // Hide overlay
+                        overlay.style.display = "none";
+                    
+                        // Start playing the video (optional)
+                        video.play();
+                    });
+                });
+            });
+        </script>
+
+    </body>
+</html>
